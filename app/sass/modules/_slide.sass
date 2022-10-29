@@ -1,0 +1,32 @@
+.slide
+  background-color: $sectionBg
+  &__title
+    margin-bottom: 15px
+  &__subtitle
+    font-size: 30px
+    margin-bottom: 70px
+  &__list
+    display: flex
+    flex-wrap: wrap
+    row-gap: 50px
+    justify-content: space-between
+    &-item
+      display: flex
+      align-items: center
+      &:nth-child(even)
+        max-width: 500px
+        p
+          max-width: 370px
+    &-text
+      max-width: 30rem
+    &-number
+      position: relative
+      width: 120px
+      span
+        color: $slideList
+        font-size: 96px
+        @extend %inter-700
+      img
+        position: absolute
+        bottom: 5px
+        left: 35px

@@ -1,0 +1,74 @@
+=flex-center ()
+  display: flex
+  justify-content: center
+  align-items: center
+
+=center-item ($position)
+  position: $position
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+=center-item-y ($position: absolute)
+  position: $position
+  top: 50%
+  transform: translateY(-50%)
+
+=center-item-x ($position: absolute)
+  position: $position
+  left: 50%
+  transform: translateX(-50%)
+
+//   font-family: 'Inter', sans-serif;
+// font-family: 'Lato', sans-serif;
+
+// =font ($name,$w, $pathWoff2, $pathWoff)
+//   @font-face
+//     font:
+//       family: $name
+//       weight: $w
+//       style: normal
+//       display: swap
+//     src: local($name), url($pathWoff2) format('woff2'), url($pathWoff) format('woff')
+
+=bgp($path, $s, $pos1, $pos2 )
+  background:
+    repeat: no-repeat
+    image: url($path)
+    size: $s
+    position: $pos1 $pos2
+
+%lato
+  font:
+    family: 'Lato', sans-serif
+    weight: 700
+
+%lato-900
+  font:
+    family: 'Lato', sans-serif
+    weight: 900
+
+%inter-400
+  font:
+    family: 'Inter', sans-serif
+    weight: 400
+
+%inter-500
+  font:
+    family: 'Inter', sans-serif
+    weight: 500
+
+%inter-600
+  font:
+    family: 'Inter', sans-serif
+    weight: 600
+
+%inter-700
+  font:
+    family: 'Inter', sans-serif
+    weight: 700
+
+%inter-800
+  font:
+    family: 'Inter', sans-serif
+    weight: 800

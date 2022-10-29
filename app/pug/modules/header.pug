@@ -1,0 +1,21 @@
+header.header#home
+  .header__video
+    .header__video-box
+      video(autoplay playsinline loop muted disablepictureinpicture)
+        source(src='videos/video.webm' type='video/webm')
+        source(src='videos/video.mp4' type='video/mp4')
+    .header__video-box.sm
+      video(autoplay playsinline loop muted disablepictureinpicture)
+        source(src='videos/video.webm' type='video/webm')
+        source(src='videos/video-sm.mp4' type='video/mp4')
+  .header__inner
+    .container 
+      .header__inner-box
+        a.logo(href="/")
+          img(src="images/logo.png", alt="logo icon")
+        +menu
+        a.header__button(href="#footer") get app
+        .burger
+          span
+          span
+          span

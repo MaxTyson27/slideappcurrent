@@ -1,0 +1,48 @@
+.roadmap
+  &__title
+    margin-bottom: 90px
+  &__inner
+    display: flex
+    align-items: flex-end
+  &__item
+    &:nth-child(even)
+      height: 307px
+      ul
+        margin-left: 3px
+      .roadmap__item-box
+        margin-bottom: 0
+        margin-top: 15px
+    &:last-child
+      height: 260px
+    &-list
+      opacity: 0
+      transition: opacity .5s
+      &.animate
+        opacity: 1
+    &-box
+      display: flex
+      align-items: center
+      margin-bottom: 15px
+    &-line
+      width: 0
+      transition: width .5s
+      height: 2px
+      background-color: #000
+      &.animate
+        width: 280px
+    &-circle
+      width: 25px
+      height: 25px
+      transform: scale(0.2)
+      opacity: 0
+      transition: all .4s
+      background-color: $secondary
+      border-radius: 50%
+      &.animate
+        opacity: 1
+        transform: scale(1)
+    &-list
+      &-item
+        &:first-child
+          @extend %inter-800
+          font-size: 25px

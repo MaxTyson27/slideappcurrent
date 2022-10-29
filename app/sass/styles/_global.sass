@@ -1,0 +1,51 @@
+body
+  @extend %inter-400
+  font-size: 20px
+  color: $primary
+
+.wrapper
+  overflow: hidden
+  // position: relative
+
+.container
+  max-width: 1220px
+  padding: 0 10px
+  margin: 0 auto
+
+h2
+  font-size: 65px
+  color: $secondary
+
+section
+  padding: 120px 0
+
+strong
+  @extend %inter-600
+
+.title
+  color: $primary
+  @extend %inter-800
+  font-size: 65px
+  line-height: 120%
+  span
+    color: $secondary
+
+.list
+  &__item
+    font-size: 33px
+    &:first-child
+      color: $secondary
+      font-size: 35px
+      margin-bottom: 15px
+      @extend %inter-800
+
+.slick-prev
+  display: none !important
+
+.slick-next
+  cursor: pointer
+  position: absolute
+  right: -90px
+  top: 35%
+  background-color: transparent
+  border: none

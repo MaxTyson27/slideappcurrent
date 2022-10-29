@@ -1,0 +1,7 @@
+mixin menu
+  nav.menu
+    ul.menu__list
+      each value, index in {home: 'home', roadmap: 'roadmap', team: 'team', 'our backers': 'backers', litepaper: 'litepaper', 'white paper': 'paper'} 
+        li.menu__list-item 
+          a.menu__list-link(href="#" + value)= index
+      a(href="#footer").menu__button--sm get app
