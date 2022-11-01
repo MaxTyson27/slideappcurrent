@@ -2,6 +2,7 @@
   padding-top: 120px
   padding-bottom: 160px
   position: relative
+  z-index: 1
   &::before,
   &::after
     content: ''
@@ -20,7 +21,10 @@
     height: 920px
     top: -200px
     right: 0
+    z-index: 1
     object-fit: contain
+    &--sm
+      display: none
   &__inner
     padding-bottom: 120px
   &__title
@@ -30,3 +34,27 @@
     display: flex
     column-gap: 50px
     align-items: center
+
+@media(max-width: 1219px)
+  .footer
+    padding-top: 0
+    padding-bottom: 60px
+    &::before,
+    &::after
+      display: none
+    &__inner
+      padding-bottom: 0
+    &__title
+      margin-bottom: 40px
+    &__links
+      flex-direction: column
+      row-gap: 30px
+    &__link
+      img
+        max-width: 215px
+    &__image
+      display: none
+      &--sm
+        display: block
+        margin-left: auto
+        margin-bottom: 30px

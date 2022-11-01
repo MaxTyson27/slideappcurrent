@@ -30,3 +30,35 @@
         position: absolute
         bottom: 5px
         left: 35px
+
+@media(max-width: 1219px)
+  .slide
+    &__subtitle
+      font-size: 17px
+      text-align: center
+      max-width: 250px
+      margin: 0 auto 30px
+    &__list
+      flex-direction: column
+      row-gap: 30px
+      &-item
+        &:nth-child(2)
+          order: 3
+        &:nth-child(4)
+          order: 4
+        &:last-child
+          order: 6
+        &:nth-child(even)
+          p
+            max-width: 250px
+
+      &-text
+        font-size: 15px
+        max-width: 250px
+      &-number
+        width: 84px
+        span
+          font-size: 62px
+        img
+          max-width: 35px
+          left: 23px

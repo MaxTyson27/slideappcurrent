@@ -19,3 +19,41 @@
       font-size: 25px
       color: #ffffff
       @extend %inter-600
+
+.slick-next,
+.slick-prev
+  cursor: pointer
+  position: absolute
+  width: 34px
+  height: 34px
+  right: -90px
+  top: 35%
+  background-color: transparent
+  border: none
+  padding: 0
+  img
+    width: 34px
+    height: 34px
+
+.slick-prev
+  display: none !important
+  top: 40%
+  right: unset
+  left: -52px
+
+@media(max-width: 1219px)
+  .team
+    &__inner
+      width: 225px
+      margin: 0 auto
+    &__item
+      &-desc,
+      &-name
+        font-size: 18px
+      img
+        max-width: 225px
+  .slick-next
+    right: -52px
+    top: 40%
+  .slick-prev
+    display: block !important

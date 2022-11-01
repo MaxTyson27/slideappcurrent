@@ -14,7 +14,15 @@ $(function () {
     slidesToScroll: 1,
     variableWidth: true,
     nextArrow: '<button type="button" class="slick-next"><img src="images/team/arrow.png", alt="arrow next"></button>',
-    prevArrow: '<button type="button" class="slick-prev">Previous</button>'
+    prevArrow: '<button type="button" class="slick-prev"><img src="images/team/arrow-prev.png", alt="arrow prev"></button>',
+    responsive: [
+      {
+        breakpoint: 1219,
+        settings: {
+          slidesToShow: 1
+        }
+      },
+    ]
   })
 
   $(".menu a, .header__button, .menu__button--sm").on("click", function (event) {
@@ -31,13 +39,10 @@ $(function () {
     
   });
 
-
-
-  const setActive = () => {
+  
+  
+  new WOW().init()
     
-   
-  }
-
   const menuState = () => {
 
     burger.on('click', function (e) {
@@ -56,14 +61,61 @@ $(function () {
 
   }
   
+
   menuState()
   
-
-  new WOW().init()
 
 
 });
 
+
+
+(()=> {
+
+  const backers = document.getElementById('backers')
+  const inner = document.querySelector('.backers__inner')
+  const items = [...document.querySelectorAll('.backers__item')]
+  let count = 500
+  // let countWidth = items.reduce((width, item) => width + item.offsetWidth, (items.length - 1) * 20)
+  let countWidth = 5000
+
+  
+  inner.style.width = countWidth + 'px'
+  inner.style.transform = `translateX(${count}px)`
+
+  function scrollHorizontally(e) {
+        e = window.event || e;
+        // var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        // backers.scrollLeft -= (delta*40); // Multiplied by 10
+        if(e.deltaY > 0){
+          if(count <= -2230){
+            return
+          } else {
+            count -= 50
+          }
+        } else {
+          if(count >= 500) {
+            return
+          } else {
+            count += 50
+          }
+          
+        }
+        
+        inner.style.transform = `translateX(${count}px)`
+        e.preventDefault();
+  }
+
+  if (backers.addEventListener) {
+        // IE9, Chrome, Safari, Opera
+    backers.addEventListener("mousewheel", scrollHorizontally, false);
+        // Firefox
+    backers.addEventListener("DOMMouseScroll", scrollHorizontally, false);
+  } else {
+        // IE 6/7/8
+    backers.attachEvent("onmousewheel", scrollHorizontally);
+  }
+})()
 
 
 const animateRoadMapSection = () => {
@@ -88,8 +140,8 @@ const animateRoadMapSection = () => {
       line = items[count].querySelector('.roadmap__item-line'),
       text = items[count].querySelector('.roadmap__item-list');
           
-      setAnimationFrames(circle, 'animate', 400).then(res => {
-        return setAnimationFrames(text, 'animate', 200).then(res => {
+      setAnimationFrames(circle, 'animate', 500).then(res => {
+        return setAnimationFrames(text, 'animate', 400).then(res => {
           return setAnimationFrames(line, 'animate', 0)
         })
       })
@@ -100,7 +152,7 @@ const animateRoadMapSection = () => {
         clearInterval(interval)
       } 
 
-    }, 550);
+    }, 600);
 
     
 
@@ -119,7 +171,7 @@ const animateRoadMapSection = () => {
     const section = document.querySelector('.roadmap'),
     animateSectionHeight = section.offsetHeight,
     animateSectionOffset = offset(section).top,
-    animStart = 1.5;
+    animStart = 3;
 
   
 
@@ -141,7 +193,7 @@ const animateRoadMapSection = () => {
   
 }
 
-// animateRoadMapSection()
+animateRoadMapSection()
 
 // const scrollSlides = () => {
 //   const wrapper = document.querySelector('.backers__inner')
@@ -163,22 +215,3 @@ const animateRoadMapSection = () => {
 
 // scrollSlides()
 
-// (function() {
-
-//     function scrollHorizontally(e) {
-//         e = window.event || e;
-//         var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-//         document.getElementById('statistic-table').scrollLeft -= (delta*10); // Multiplied by 10
-//         e.preventDefault();
-//     }
-//     if (document.getElementById('statistic-table').addEventListener) {
-//         // IE9, Chrome, Safari, Opera
-//         document.getElementById('statistic-table').addEventListener("mousewheel", scrollHorizontally, false);
-//         // Firefox
-//         document.getElementById('statistic-table').addEventListener("DOMMouseScroll", scrollHorizontally, false);
-//     } else {
-//         // IE 6/7/8
-//         document.getElementById('statistic-table').attachEvent("onmousewheel", scrollHorizontally);
-//     }
-
-// })();

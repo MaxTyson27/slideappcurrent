@@ -1,5 +1,11 @@
 .ways
   background-color: $sectionBg
+  .container
+    max-width: 100%
+    padding: 0
+  &__image
+    &.sm
+      display: none
   &__title
     margin-bottom: 85px
   &__inner
@@ -11,3 +17,21 @@
     flex-direction: column
     row-gap: 70px
     padding-left: 120px
+
+@media(max-width: 1219px)
+  .ways
+    .container
+      max-width: 375px
+      padding: 0 20px
+    &__inner
+      display: block
+    &__image
+      display: none
+      &.sm
+        display: block
+        margin: 0 auto 40px
+    &__lists
+      padding-left: 0
+      row-gap: 35px
+    &__title
+      margin: 0 auto 40px

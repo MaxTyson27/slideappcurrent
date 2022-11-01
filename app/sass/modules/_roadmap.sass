@@ -43,6 +43,64 @@
         transform: scale(1)
     &-list
       &-item
+        &--sm
+          display: none
         &:first-child
           @extend %inter-800
           font-size: 25px
+
+@media(max-width: 1219px)
+  .roadmap
+    &__title
+      margin-bottom: 60px
+    &__inner
+      display: block
+      height: 740px
+    &__item
+      display: flex
+      justify-content: flex-end
+      width: 180px
+      &:last-child
+        .roadmap__item-list-item
+          display: block
+        .roadmap__item-line
+          &.animate
+            height: 115px
+      &:nth-child(even)
+        height: min-content
+        width: 180px
+        justify-content: flex-start
+        margin-left: auto
+        .roadmap__item-box
+          margin-bottom: 0
+          margin-top: 0px
+          order: 1
+        ul
+          margin-left: 10px
+          margin-right: 0
+          order: 2
+          text-align: left
+      ul
+        margin-left: 0px
+        margin-right: 10px
+        order: 1
+        text-align: right
+      &-list
+        &-item
+          display: none
+          &:first-child
+            font-size: 20px
+            display: block
+          &--sm
+            display: block
+      &-box
+        margin-bottom: 0
+        flex-direction: column
+        order: 2
+      &-line
+        width: 2px
+        height: 0
+        transition: height .5s
+        &.animate
+          width: 2px
+          height: 175px

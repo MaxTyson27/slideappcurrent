@@ -1,19 +1,20 @@
 .backers
-  position: sticky
-  top: 0
+  position: relative
+  z-index: 2
+  padding: 0
+  padding-top: 120px
   &__title
     color: #000
-    margin-bottom: 100px
   &__inner
-    position: relative
-    z-index: 2
-    overflow-x: hidden
     display: flex
     column-gap: 20px
-
+    padding-top: 100px
+    padding-bottom: 120px
+    transition: transform .2s
   &__item
     border: 2px solid #000
     min-width: 375px
     min-heigh: 145px
     +flex-center
     cursor: pointer
+    background-color: #fff
